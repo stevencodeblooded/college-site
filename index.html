@@ -4,17 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Home | College Bound Scholars, Inc.</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20250602">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+      <a href="index.html">
+        <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <!-- <li><a href="index.html" class="active">Home</a></li> -->
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="scholars-guide.html">The Scholar’s Guide</a></li>
+        <li><a href="scholars-guide.html">The Scholar's Guide</a></li>
         <li><a href="support.html">Support Our Mission</a></li>
         <li><a href="get-started.html">Get Started</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -22,27 +30,85 @@
       </ul>
       <a class="cta-button" href="get-started.html">Start Your Journey</a>
     </nav>
+    <!-- Mobile overlay for menu -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
   </header>
+  
   <main>
-    
-    <section>
-      <h1>Real Support. Real Paths. Real Opportunity.</h1>
-      <p>College isn’t just for the young — it’s for the ready.</p>
-      <a href="get-started.html" class="cta-button">Start Your Journey</a>
+    <section class="hero-section">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">Real Support. Real Paths. Real Opportunity.</h1>
+          <p class="hero-subtitle">College isn't just for the young — it's for the ready.</p>
+          <div class="hero-cta">
+            <a href="get-started.html" class="cta-button primary-cta">Start Your Journey</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-accent"></div>
+        </div>
+      </div>
     </section>
-    <section>
-      <h2>Our Mission</h2>
-      <p>College Bound Scholars, Inc. empowers adult learners who are starting or returning to college after time away. We provide personalized admissions counseling, strategic planning, and dedicated support to help non-traditional students navigate the application process with confidence.</p>
+
+    <section class="mission-section">
+      <div class="mission-container">
+        <div class="mission-content">
+          <div class="mission-text">
+            <div class="section-label">Our Mission</div>
+            <h2 class="mission-title">Empowering Adult Learners</h2>
+            <p class="mission-description">College Bound Scholars, Inc. empowers adult learners who are starting or returning to college after time away. We provide personalized admissions counseling, strategic planning, and dedicated support to help non-traditional students navigate the application process with confidence.</p>
+          </div>
+          <div class="mission-image">
+            <div class="image-container">
+              <img src="images/michelle-speaking.jpg" alt="Michelle Tiller speaking at an event, showcasing her expertise in adult education and public speaking" class="founder-image">
+              <div class="image-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <section>
-      <h2>Education is still an option — let’s make it happen.</h2>
-      <p>Your journey didn’t end — it just needed a guide.</p>
-      <a href="services.html" class="cta-button">Explore Our Services</a>
+
+    <section class="closing-section">
+      <div class="closing-container">
+        <div class="closing-content">
+          <h2 class="closing-title">Education is still an option — let's make it happen.</h2>
+          <p class="closing-subtitle">Your journey didn't end — it just needed a guide.</p>
+          <div class="closing-cta">
+            <a href="services.html" class="cta-button secondary-cta">Explore Our Services</a>
+          </div>
+        </div>
+        <div class="closing-visual">
+          <div class="visual-elements">
+            <div class="floating-element element-1"></div>
+            <div class="floating-element element-2"></div>
+            <div class="floating-element element-3"></div>
+          </div>
+        </div>
+      </div>
     </section>
-    
   </main>
+  
   <footer>
     <p>&copy; 2025 College Bound Scholars, Inc. | Helping You Go Back, So You Can Move Forward</p>
   </footer>
+  
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      const overlay = document.getElementById('mobileOverlay');
+      
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+      overlay.classList.toggle('active');
+      
+      // Prevent body scroll when menu is open
+      if (navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
 </body>
 </html>

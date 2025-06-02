@@ -4,17 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About | College Bound Scholars, Inc.</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20250602">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+      <a href="index.html">
+        <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <!-- <li><a href="index.html">Home</a></li> -->
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="scholars-guide.html">The Scholar’s Guide</a></li>
+        <li><a href="scholars-guide.html">The Scholar's Guide</a></li>
         <li><a href="support.html">Support Our Mission</a></li>
         <li><a href="get-started.html">Get Started</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -22,19 +30,102 @@
       </ul>
       <a class="cta-button" href="get-started.html">Start Your Journey</a>
     </nav>
+    <!-- Mobile overlay for menu -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
   </header>
+  
   <main>
-    
-    <section>
-      <h1>About Our Founder</h1>
-      <p>Michelle Tiller enrolled at Georgia Piedmont Technical College (GPTC) in her 40s, earning an Associate of Applied Science in Business Management. She immersed herself in the GPTC community through student clubs and campus organizations and received national recognition as an award-winning public speaker. In her early days as a student, she struggled to ask for help but eventually learned that success in college requires a strong support system.</p>
-      <p>Shari Smith, GPTC’s Student Activities Director, played a pivotal role by mentoring Michelle, encouraging her to join executive boards and compete in student leadership competitions. Michelle won first place in a national customer service and client relations competition through FBLA (formerly Phi Beta Lambda). After graduating, she received life coaching from Cynthia Culbreath through Partners in Change, who supported her transition and growth.</p>
-      <p>Michelle then began working in GPTC’s Student Affairs department, gaining experience in admissions, financial aid, academic advising, and case management. She founded College Bound Scholars, Inc. to help adult learners, first-generation students, and non-traditional applicants navigate college and career readiness with encouragement and guidance from someone who’s been there. Now pursuing her MBA, Michelle remains committed to walking alongside those just beginning their own journeys.</p>
+    <section class="about-hero-section">
+      <div class="about-hero-container">
+        <div class="about-hero-content">
+          <div class="section-label">Leadership</div>
+          <h1 class="about-hero-title">About Our Founder</h1>
+          <p class="about-hero-subtitle">Helping adult learners navigate their path back to education with experience, empathy, and expertise.</p>
+        </div>
+        <div class="about-hero-visual">
+          <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+          </div>
+        </div>
+      </div>
     </section>
-    
+
+    <section class="founder-spotlight-section">
+      <div class="founder-spotlight-container">
+        <div class="founder-image-section">
+          <div class="image-wrapper">
+            <div class="image-frame">
+              <img src="images/michelle-headshot.jpg" alt="Michelle Tiller, Founder of College Bound Scholars Inc., professional headshot showing her warm smile and professional demeanor" class="founder-headshot">
+              <div class="image-glow"></div>
+            </div>
+            <div class="image-decoration"></div>
+          </div>
+        </div>
+        
+        <div class="founder-story-section">
+          <div class="story-container">
+            <div class="story-paragraph">
+              <div class="paragraph-number">01</div>
+              <div class="paragraph-content">
+                <p>Michelle Tiller enrolled at Georgia Piedmont Technical College (GPTC) in her 40s, earning an Associate of Applied Science in Business Management. She immersed herself in the GPTC community through student clubs and campus organizations and received national recognition as an award-winning public speaker. In her early days as a student, she struggled to ask for help but eventually learned that success in college requires a strong support system.</p>
+              </div>
+            </div>
+
+            <div class="story-paragraph">
+              <div class="paragraph-number">02</div>
+              <div class="paragraph-content">
+                <p>Shari Smith, GPTC's Student Activities Director, played a pivotal role by mentoring Michelle, encouraging her to join executive boards and compete in student leadership competitions. Michelle won first place in a national customer service and client relations competition through FBLA (formerly Phi Beta Lambda). After graduating, she received life coaching from Cynthia Culbreath through Partners in Change, who supported her transition and growth.</p>
+              </div>
+            </div>
+
+            <div class="story-paragraph">
+              <div class="paragraph-number">03</div>
+              <div class="paragraph-content">
+                <p>Michelle then began working in GPTC's Student Affairs department, gaining experience in admissions, financial aid, academic advising, and case management. She founded College Bound Scholars, Inc. to help adult learners, first-generation students, and non-traditional applicants navigate college and career readiness with encouragement and guidance from someone who's been there. Now pursuing her MBA, Michelle remains committed to walking alongside those just beginning their own journeys.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-cta-section">
+      <div class="about-cta-container">
+        <div class="cta-content">
+          <h3 class="cta-title">Ready to Start Your Educational Journey?</h3>
+          <p class="cta-subtitle">Connect with Michelle and discover how College Bound Scholars can guide your path forward.</p>
+          <div class="cta-buttons">
+            <a href="get-started.html" class="cta-button primary-cta">Get Started Today</a>
+            <a href="contact.html" class="cta-button secondary-cta">Contact Michelle</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+  
   <footer>
     <p>&copy; 2025 College Bound Scholars, Inc. | Helping You Go Back, So You Can Move Forward</p>
   </footer>
+  
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      const overlay = document.getElementById('mobileOverlay');
+      
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+      overlay.classList.toggle('active');
+      
+      // Prevent body scroll when menu is open
+      if (navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
 </body>
 </html>

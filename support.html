@@ -4,37 +4,126 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Support Our Mission | College Bound Scholars, Inc.</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20250602">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+      <a href="index.html">
+        <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <!-- <li><a href="index.html">Home</a></li> -->
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="scholars-guide.html">The Scholar’s Guide</a></li>
-        <li><a href="support.html">Support Our Mission</a></li>
+        <li><a href="scholars-guide.html">The Scholar's Guide</a></li>
+        <li><a href="support.html" class="active">Support Our Mission</a></li>
         <li><a href="get-started.html">Get Started</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="media-kit.html">Media Kit</a></li>
       </ul>
       <a class="cta-button" href="get-started.html">Start Your Journey</a>
     </nav>
+    <!-- Mobile overlay for menu -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
   </header>
   <main>
-    
-    <section>
-      <h2>Why Give?</h2>
-      <p>Your support helps remove financial and emotional barriers for adult learners returning to school. Every dollar goes directly toward free college admissions counseling, outreach, workshops, and student mentorship.</p>
-      <h2>Signature Initiative: The Last Mile Scholarship</h2>
-      <p><em>"Closing the gap between near-completion and graduation."</em> This fund supports adult learners who are just a few classes away from finishing, but have exhausted their federal Pell Grant eligibility. With your help, they can graduate debt-free.</p>
+    <section class="support-hero">
+      <div class="support-header">
+        <h1>Support Our Mission</h1>
+        <p class="hero-subtitle">Help us remove barriers and create opportunities for adult learners to achieve their educational dreams.</p>
+      </div>
     </section>
-    
+
+    <section class="why-give-section">
+      <div class="give-card">
+        <div class="give-icon">❤️</div>
+        <div class="give-content">
+          <h2>Why Give?</h2>
+          <p>Your support helps remove financial and emotional barriers for adult learners returning to school. Every dollar goes directly toward free college admissions counseling, outreach, workshops, and student mentorship.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="scholarship-section">
+      <div class="scholarship-card">
+        <div class="scholarship-header">
+          <div class="scholarship-icon">🎓</div>
+          <h2>Signature Initiative: The Last Mile Scholarship</h2>
+        </div>
+        
+        <div class="scholarship-content">
+          <div class="scholarship-quote">
+            <p><em>"Closing the gap between near-completion and graduation."</em></p>
+          </div>
+          
+          <div class="scholarship-description">
+            <p>This fund supports adult learners who are just a few classes away from finishing, but have exhausted their federal Pell Grant eligibility. With your help, they can graduate debt-free.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact-section">
+      <div class="impact-header">
+        <h3>Your Impact Makes a Difference</h3>
+      </div>
+      
+      <div class="impact-grid">
+        <div class="impact-item">
+          <div class="impact-icon">📚</div>
+          <h4>Free Counseling</h4>
+          <p>Providing personalized guidance to adult learners navigating their return to education</p>
+        </div>
+        
+        <div class="impact-item">
+          <div class="impact-icon">💡</div>
+          <h4>Workshops & Resources</h4>
+          <p>Educational sessions and tools to empower students throughout their journey</p>
+        </div>
+        
+        <div class="impact-item">
+          <div class="impact-icon">🤝</div>
+          <h4>Mentorship Programs</h4>
+          <p>One-on-one support from someone who understands the challenges they face</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="donation-cta">
+      <div class="cta-content">
+        <h3>Ready to Make an Impact?</h3>
+        <p>Join us in transforming lives through education. Every contribution helps an adult learner take their next step forward.</p>
+        <a href="contact.html" class="cta-button donation-button">Get in Touch to Support</a>
+      </div>
+    </section>
   </main>
   <footer>
     <p>&copy; 2025 College Bound Scholars, Inc. | Helping You Go Back, So You Can Move Forward</p>
   </footer>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      const overlay = document.getElementById('mobileOverlay');
+      
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+      overlay.classList.toggle('active');
+      
+      // Prevent body scroll when menu is open
+      if (navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
 </body>
 </html>

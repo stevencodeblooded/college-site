@@ -5,43 +5,148 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us | College Bound Scholars, Inc.</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+      <a href="index.html">
+        <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="scholars-guide.html">The Scholar’s Guide</a></li>
+        <li><a href="scholars-guide.html">The Scholar's Guide</a></li>
         <li><a href="support.html">Support Our Mission</a></li>
         <li><a href="get-started.html">Get Started</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
         <li><a href="media-kit.html">Media Kit</a></li>
       </ul>
       <a class="cta-button" href="get-started.html">Start Your Journey</a>
     </nav>
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
   </header>
+
   <main>
-    
-    <section>
-      <h2>Let’s Connect — We’re Here to Help</h2>
-      <form>
-        <input type="text" placeholder="Full Name" required><br>
-        <input type="email" placeholder="Email Address" required><br>
-        <input type="tel" placeholder="Phone Number (optional)"><br>
-        <textarea placeholder="Your Message" required></textarea><br>
-        <label>Preferred Contact Method:</label>
-        <select><option>Email</option><option>Phone Call</option></select><br>
-        <button type="submit">Send</button>
-      </form>
-      <p>Email: info@collegeboundscholars.org<br>Phone: 678-208-STAR</p>
+    <!-- Hero Section -->
+    <section class="contact-hero-section">
+      <div class="contact-hero-container">
+        <div class="contact-hero-content">
+          <h1 class="contact-hero-title">Let's Connect — We're Here to Help</h1>
+          <p class="contact-hero-subtitle">Ready to take the next step? We're here to guide you through every part of your educational journey.</p>
+        </div>
+        <div class="contact-hero-visual">
+          <div class="contact-accent"></div>
+        </div>
+      </div>
     </section>
-    
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+      <div class="contact-form-container">
+        <div class="form-content">
+          <h2 class="form-title">Send Us a Message</h2>
+          <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours to discuss how we can support your educational goals.</p>
+          
+          <form action="https://formsubmit.co/info@collegeboundscholars.org" method="POST" class="enhanced-contact-form">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://collegeboundscholars.org/contact.html?success=true">
+            
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Phone Number (optional)">
+            <textarea name="message" placeholder="Tell us about your educational goals and how we can help..." required></textarea>
+            
+            <label for="contact-method">Preferred Contact Method:</label>
+            <select name="contact-method" id="contact-method">
+              <option value="email">Email</option>
+              <option value="phone">Phone Call</option>
+            </select>
+            
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info-section">
+          <div class="info-card">
+            <div class="info-header">
+              <div class="info-icon">📧</div>
+              <h3>Email Us</h3>
+            </div>
+            <div class="info-content">
+              <p>Send us a detailed message about your educational goals.</p>
+              <p><a href="mailto:info@collegeboundscholars.org">info@collegeboundscholars.org</a></p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-header">
+              <div class="info-icon">📞</div>
+              <h3>Call Us</h3>
+            </div>
+            <div class="info-content">
+              <p>Speak directly with our team about your college plans.</p>
+              <p><a href="tel:678-208-7827">678-208-STAR</a></p>
+            </div>
+          </div>
+
+          <div class="info-card response-time">
+            <div class="info-header">
+              <div class="info-icon">⏰</div>
+              <h3>Response Time</h3>
+            </div>
+            <div class="info-content">
+              <p>We typically respond to all inquiries within 24 hours during business days.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact-cta-section">
+      <div class="contact-cta-container">
+        <h2 class="cta-title">Ready to Start Your Journey?</h2>
+        <p class="cta-subtitle">Don't wait — your educational goals are within reach. Let's create a plan that works for you.</p>
+        <a href="get-started.html" class="secondary-cta">Get Started Today</a>
+      </div>
+    </section>
   </main>
+
   <footer>
     <p>&copy; 2025 College Bound Scholars, Inc. | Helping You Go Back, So You Can Move Forward</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      const overlay = document.getElementById('mobileOverlay');
+      
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+      overlay.classList.toggle('active');
+      
+      if (navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Show success message if redirected with success parameter
+    if (window.location.search.includes('success=true')) {
+      const successMessage = document.createElement('div');
+      successMessage.className = 'success-message';
+      successMessage.innerHTML = 'Thank you for your message! We\'ll get back to you within 24 hours.';
+      document.querySelector('.form-content').insertBefore(successMessage, document.querySelector('.enhanced-contact-form'));
+    }
+  </script>
 </body>
 </html>

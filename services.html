@@ -4,17 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Support That Meets You Where You Are | College Bound Scholars, Inc.</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20250602">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+      <a href="index.html">
+        <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <!-- <li><a href="index.html">Home</a></li> -->
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="scholars-guide.html">The Scholar’s Guide</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="scholars-guide.html">The Scholar's Guide</a></li>
         <li><a href="support.html">Support Our Mission</a></li>
         <li><a href="get-started.html">Get Started</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -22,24 +30,81 @@
       </ul>
       <a class="cta-button" href="get-started.html">Start Your Journey</a>
     </nav>
+    <!-- Mobile overlay for menu -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
   </header>
   <main>
-    
-    <section>
-      <p>All of our services are free and designed to meet adult learners where they are. We remove barriers to higher education by focusing on Georgia's technical colleges and supporting every step of the journey.</p>
-      <ul>
-        <li>College Admissions Counseling</li>
-        <li>Financial Aid & Scholarship Guidance</li>
-        <li>Career & Program Pathway Planning</li>
-        <li>1-on-1 Coaching & Mentoring</li>
-        <li>Application & Document Support</li>
-        <li>Virtual and In-Person Workshops & Information Sessions</li>
-      </ul>
+    <section class="services-intro">
+      <h2>Our Services</h2>
+      <p class="services-description">All of our services are free and designed to meet adult learners where they are. We remove barriers to higher education by focusing on Georgia's technical colleges and supporting every step of the journey.</p>
     </section>
     
+    <section class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🎓</div>
+        <h3>College Admissions Counseling</h3>
+        <p>Personalized guidance through the college application process, helping you choose the right programs and navigate admission requirements.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">💰</div>
+        <h3>Financial Aid & Scholarship Guidance</h3>
+        <p>Expert assistance with FAFSA, scholarship applications, and understanding financial aid options to make education affordable.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">🗺️</div>
+        <h3>Career & Program Pathway Planning</h3>
+        <p>Strategic planning to align your career goals with the right educational programs and create a clear path forward.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">👥</div>
+        <h3>1-on-1 Coaching & Mentoring</h3>
+        <p>Individual support and mentorship from someone who understands the challenges of returning to school as an adult learner.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">📄</div>
+        <h3>Application & Document Support</h3>
+        <p>Help with completing applications, writing essays, gathering transcripts, and organizing all required documentation.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Virtual and In-Person Workshops & Information Sessions</h3>
+        <p>Educational workshops and information sessions designed to inform and empower adult learners throughout their journey.</p>
+      </div>
+    </section>
+    
+    <section class="services-cta">
+      <h3>Ready to Get Started?</h3>
+      <p>Take the first step toward your educational goals with our free consultation.</p>
+      <a href="get-started.html" class="cta-button">Start Your Journey</a>
+    </section>
+
+
   </main>
   <footer>
     <p>&copy; 2025 College Bound Scholars, Inc. | Helping You Go Back, So You Can Move Forward</p>
   </footer>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      const overlay = document.getElementById('mobileOverlay');
+      
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+      overlay.classList.toggle('active');
+      
+      // Prevent body scroll when menu is open
+      if (navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
 </body>
 </html>

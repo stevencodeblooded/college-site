@@ -5,39 +5,195 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Get Started | College Bound Scholars, Inc.</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
-<body>
+<body class="get-started-page">
   <header>
     <nav class="navbar">
-      <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+      <a href="index.html">
+        <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="scholars-guide.html">The Scholar’s Guide</a></li>
+        <li><a href="scholars-guide.html">The Scholar's Guide</a></li>
         <li><a href="support.html">Support Our Mission</a></li>
-        <li><a href="get-started.html">Get Started</a></li>
+        <li><a href="get-started.html" class="active">Get Started</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="media-kit.html">Media Kit</a></li>
       </ul>
       <a class="cta-button" href="get-started.html">Start Your Journey</a>
     </nav>
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
   </header>
+  
   <main>
-    
-    <section>
-      <h2>Ready to Go Back to School? We’re Ready to Help.</h2>
-      <p>Take the first step:</p>
-      <ol>
-        <li><strong>Fill Out the Form</strong> – Share your goals and background.</li>
-        <li><strong>Schedule a Free Consultation</strong> – Meet with Michelle for a phone or virtual session.</li>
-      </ol>
-      <p>(Form and calendar link will be embedded here.)</p>
+    <section class="get-started-hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="section-label">Begin Your Journey</div>
+          <h1 class="hero-title">Ready to Go Back to School? We're Ready to Help.</h1>
+          <p class="hero-subtitle">Take the first step toward achieving your educational dreams with personalized support every step of the way.</p>
+        </div>
+        <div class="hero-visual">
+          <div class="step-indicators">
+            <div class="step-circle active">
+              <span class="step-number">1</span>
+              <div class="step-label">Fill Out Form</div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step-circle">
+              <span class="step-number">2</span>
+              <div class="step-label">Schedule Consultation</div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step-circle">
+              <span class="step-number">3</span>
+              <div class="step-label">Start Your Journey</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    
+
+    <section class="process-overview">
+      <div class="process-container">
+        <h2 class="process-title">Your Path Forward</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-icon">📝</div>
+            <h3>Fill Out the Form</h3>
+            <p>Share your goals and background so we can understand your unique situation and aspirations.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-icon">📞</div>
+            <h3>Schedule a Consultation</h3>
+            <p>Meet with Michelle for a personalized phone or virtual session to discuss your next steps.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-icon">🚀</div>
+            <h3>Begin Your Journey</h3>
+            <p>Start your educational journey with ongoing support and guidance tailored to your needs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+      
+    <section class="forms-section">
+      <!-- Enhanced Forms Container using Contact Page styling -->
+      <div class="contact-form-container">
+        <!-- Intake Form Section -->
+        <div class="form-content">
+          <h2 class="form-title">Intake Form</h2>
+          <p class="form-subtitle">Tell us about your educational background and goals so we can provide the most relevant support for your journey.</p>
+          
+          <form action="https://formsubmit.co/info@collegeboundscholars.org" method="POST" class="enhanced-contact-form">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Intake Form Submission">
+            <input type="hidden" name="_next" value="https://collegeboundscholars.org/get-started.html?success=true">
+            
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Phone Number (optional)">
+            <textarea name="goals" placeholder="Tell us about your educational goals, background, and what you hope to achieve..." required></textarea>
+            
+            <label for="education-level">Current Education Level:</label>
+            <select name="education-level" id="education-level" required>
+              <option value="">Please select...</option>
+              <option value="high-school">High School Diploma/GED</option>
+              <option value="some-college">Some College Credits</option>
+              <option value="associates">Associate Degree</option>
+              <option value="bachelors">Bachelor's Degree</option>
+              <option value="other">Other</option>
+            </select>
+            
+            <button type="submit">Submit Intake Form</button>
+          </form>
+        </div>
+
+        <!-- Scheduling Section -->
+        <div class="contact-info-section">
+          <div class="info-card">
+            <div class="info-header">
+              <div class="info-icon">📅</div>
+              <h3>Schedule Your Free Consultation</h3>
+            </div>
+            <div class="info-content">
+              <p>Ready to discuss your educational goals? Book a personalized consultation with Michelle to create your action plan.</p>
+              <div style="text-align: center; margin: 25px 0;">
+                <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3EBXWLPP6xkFB5tdqbwVUMNGvXfVc3NIQYHzbOGA3AS8otkGmGYOw3hJ4jkOXjxymoRd76qh9v" 
+                   class="cta-button primary-cta" 
+                   target="_blank"
+                   rel="noopener"
+                   style="display: inline-block; padding: 16px 30px; font-size: 16px; color: white;">
+                  📅 Book Your Free Consultation
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-header">
+              <div class="info-icon">💡</div>
+              <h3>What to Expect</h3>
+            </div>
+            <div class="info-content">
+              <ul style="margin: 0; padding-left: 20px; color: #6b7280;">
+                <li style="margin-bottom: 8px;">30-45 minute phone or video consultation</li>
+                <li style="margin-bottom: 8px;">Discussion of your educational goals and timeline</li>
+                <li style="margin-bottom: 8px;">Personalized guidance for your next steps</li>
+                <li style="margin-bottom: 0;">Overview of our services and how we can help</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="info-card response-time">
+            <div class="info-header">
+              <div class="info-icon">⚡</div>
+              <h3>Quick Response</h3>
+            </div>
+            <div class="info-content">
+              <p>After submitting your intake form, we'll review your information and follow up within 24 hours to discuss next steps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+  
   <footer>
     <p>&copy; 2025 College Bound Scholars, Inc. | Helping You Go Back, So You Can Move Forward</p>
   </footer>
+  
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      const overlay = document.getElementById('mobileOverlay');
+      
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+      overlay.classList.toggle('active');
+      
+      if (navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Show success message if redirected with success parameter
+    if (window.location.search.includes('success=true')) {
+      const successMessage = document.createElement('div');
+      successMessage.className = 'success-message';
+      successMessage.innerHTML = 'Thank you for submitting your intake form! We\'ll review your information and get back to you within 24 hours.';
+      document.querySelector('.form-content').insertBefore(successMessage, document.querySelector('.enhanced-contact-form'));
+    }
+  </script>
 </body>
 </html>

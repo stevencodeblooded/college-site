@@ -3,18 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Scholar’s Guide | College Bound Scholars, Inc.</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>The Scholar's Guide | College Bound Scholars, Inc.</title>
+  <link rel="stylesheet" href="css/style.css?v=20250602">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+      <a href="index.html">
+        <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <!-- <li><a href="index.html">Home</a></li> -->
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="scholars-guide.html">The Scholar’s Guide</a></li>
+        <li><a href="scholars-guide.html" class="active">The Scholar's Guide</a></li>
         <li><a href="support.html">Support Our Mission</a></li>
         <li><a href="get-started.html">Get Started</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -22,22 +30,70 @@
       </ul>
       <a class="cta-button" href="get-started.html">Start Your Journey</a>
     </nav>
+    <!-- Mobile overlay for menu -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
   </header>
   <main>
-    
-    <section>
-      <h2>Insights, Tools & Real Stories for Adult Learners</h2>
-      <ul>
-        <li><strong>Hot Careers & Technical College Programs:</strong> "Hottest Technical College Programs in Georgia Right Now"</li>
-        <li><strong>Online Learning & Networking:</strong> "How to Make Online Learning Work for You"</li>
-        <li><strong>Navigating College Life:</strong> "What I Wish I Knew Before Going Back to College in My 40s"</li>
-        <li><strong>Student Spotlights & Success Stories:</strong> "From GED to Graduation: Maria’s Journey Back to School"</li>
-      </ul>
+    <section class="scholars-guide-section">
+      <div class="guide-header">
+        <h2>Insights, Tools & Real Stories for Adult Learners</h2>
+      </div>
+      
+      <div class="guide-articles">
+        <article class="guide-card">
+          <div class="guide-icon">🔥</div>
+          <div class="guide-content">
+            <h3>Hot Careers & Technical College Programs:</h3>
+            <p>"Hottest Technical College Programs in Georgia Right Now"</p>
+          </div>
+        </article>
+        
+        <article class="guide-card">
+          <div class="guide-icon">💻</div>
+          <div class="guide-content">
+            <h3>Online Learning & Networking:</h3>
+            <p>"How to Make Online Learning Work for You"</p>
+          </div>
+        </article>
+        
+        <article class="guide-card">
+          <div class="guide-icon">🎯</div>
+          <div class="guide-content">
+            <h3>Navigating College Life:</h3>
+            <p>"What I Wish I Knew Before Going Back to College in My 40s"</p>
+          </div>
+        </article>
+        
+        <article class="guide-card">
+          <div class="guide-icon">⭐</div>
+          <div class="guide-content">
+            <h3>Student Spotlights & Success Stories:</h3>
+            <p>"From GED to Graduation: Maria's Journey Back to School"</p>
+          </div>
+        </article>
+      </div>
     </section>
-    
   </main>
   <footer>
     <p>&copy; 2025 College Bound Scholars, Inc. | Helping You Go Back, So You Can Move Forward</p>
   </footer>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      const overlay = document.getElementById('mobileOverlay');
+      
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+      overlay.classList.toggle('active');
+      
+      // Prevent body scroll when menu is open
+      if (navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
 </body>
 </html>

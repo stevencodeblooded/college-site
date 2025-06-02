@@ -4,41 +4,106 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Media Kit & Press | College Bound Scholars, Inc.</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20250602">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+      <a href="index.html">
+        <img src="images/CBS_Logo.png" alt="College Bound Scholars, Inc. logo with graduation cap and tagline Helping You Go Back, So You Can Move Forward" class="logo">
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <!-- <li><a href="index.html">Home</a></li> -->
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="scholars-guide.html">The Scholar’s Guide</a></li>
+        <li><a href="scholars-guide.html">The Scholar's Guide</a></li>
         <li><a href="support.html">Support Our Mission</a></li>
         <li><a href="get-started.html">Get Started</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="media-kit.html">Media Kit</a></li>
+        <li><a href="media-kit.html" class="active">Media Kit</a></li>
       </ul>
       <a class="cta-button" href="get-started.html">Start Your Journey</a>
     </nav>
+    <!-- Mobile overlay for menu -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
   </header>
   <main>
-    
-    <section>
-      <h2>Media Resources</h2>
-      <ul>
-        <li>Organization Overview</li>
-        <li>Founder Bio – Michelle Tiller</li>
-        <li>Key Impact Highlights (e.g., Last Mile Scholarship)</li>
-        <li>Downloadable Assets (logo, one-pager, bio)</li>
-        <li>Contact for Press & Speaking: info@collegeboundscholars.org</li>
-      </ul>
+    <section class="media-kit-section">
+      <div class="media-header">
+        <h2>Media Resources</h2>
+        <p class="media-subtitle">Press materials and resources for media coverage, speaking opportunities, and partnerships.</p>
+      </div>
+      
+      <div class="media-resources">
+        <div class="media-card">
+          <div class="media-icon">📋</div>
+          <div class="media-content">
+            <h3>Organization Overview</h3>
+            <p>Comprehensive information about College Bound Scholars, Inc., our mission, and services for adult learners.</p>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-icon">👤</div>
+          <div class="media-content">
+            <h3>Founder Bio – Michelle Tiller</h3>
+            <p>Professional biography, credentials, and background of our founder and executive director.</p>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-icon">🎯</div>
+          <div class="media-content">
+            <h3>Key Impact Highlights (e.g., Last Mile Scholarship)</h3>
+            <p>Statistics, success stories, and key achievements demonstrating our impact on adult learners.</p>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-icon">📁</div>
+          <div class="media-content">
+            <h3>Downloadable Assets (logo, one-pager, bio)</h3>
+            <p>High-resolution logos, brand guidelines, fact sheets, and other marketing materials.</p>
+          </div>
+        </div>
+        
+        <div class="media-card contact-card">
+          <div class="media-icon">📧</div>
+          <div class="media-content">
+            <h3>Contact for Press & Speaking</h3>
+            <p><strong>Email:</strong> <a href="mailto:info@collegeboundscholars.org">info@collegeboundscholars.org</a></p>
+            <p class="contact-note">For media inquiries, interview requests, and speaking opportunities.</p>
+          </div>
+        </div>
+      </div>
     </section>
-    
   </main>
   <footer>
     <p>&copy; 2025 College Bound Scholars, Inc. | Helping You Go Back, So You Can Move Forward</p>
   </footer>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      const overlay = document.getElementById('mobileOverlay');
+      
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+      overlay.classList.toggle('active');
+      
+      // Prevent body scroll when menu is open
+      if (navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
 </body>
 </html>
